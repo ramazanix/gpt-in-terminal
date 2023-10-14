@@ -42,22 +42,22 @@ while true; do
     esac
 done
 
-echo "Installing python package"
+echo "Installing python package...\n"
 python3 -m pip install g4f >/dev/null 2>&1
 
-echo "Move python script to home directory"
+echo "Move python script to home directory\n"
 mv ./chat_gpt.py ~/.chat_gpt.py
 
-echo "Add alias to shell"
+echo "Add alias to shell\n"
 if [[ "${options[$selected]}" = "bash" ]]; then
     echo "alias gpt='python3 ~/.chat_gpt.py <<<'" >> ~/.bashrc
 else
     echo "alias gpt='python3 ~/.chat_gpt.py <<<'" >> ~/.zshrc
 fi
 
-echo "Removing repository"
+echo "Removing repository\n"
 
-echo "Success!\nRerun terminal"
+echo "Success! \nRerun terminal"
 
 cd ../
 rm -r gpt-in-terminal
