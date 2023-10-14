@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# Массив с вариантами
 options=("bash" "zsh")
 
-# Индекс выбранного варианта
 selected=0
 
-# Функция для отображения вариантов и текущего выбранного
 function show_options() {
     clear
     for i in "${!options[@]}"; do
@@ -18,31 +15,28 @@ function show_options() {
     done
 }
 
-# Отобразить варианты
 show_options
 
-# Бесконечный цикл для обработки ввода пользователя
 while true; do
     read -rsn1 input
 
     case $input in
-        A) # Стрелка вверх
+        A)
             ((selected--))
             if [ $selected -lt 0 ]; then
                 selected=$((${#options[@]} - 1))
             fi
             show_options
             ;;
-        B) # Стрелка вниз
+        B)
             ((selected++))
             if [ $selected -ge ${#options[@]} ]; then
                 selected=0
             fi
             show_options
             ;;
-        "") # Нажата клавиша Enter. Выбор сделан.
+        "")
             clear
-            echo "Выбрано: ${options[$selected]}"
             break
             ;;
     esac
@@ -62,7 +56,8 @@ else
 fi
 
 echo "Removing repository"
-cd ../
-rm -r gpt-in-terminal
 
 echo "Success!\nRerun terminal"
+
+cd ../
+rm -r gpt-in-terminal
