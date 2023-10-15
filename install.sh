@@ -62,10 +62,10 @@ function main() {
 
     echo "Removing repository"
     echo
-    echo "Success! Rerun terminal"
+    echo "Success!"
 
     cd ../
     rm -rf gpt-in-terminal
+    exec $SHELL
 }
 main
-
