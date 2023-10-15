@@ -42,26 +42,30 @@ while true; do
     esac
 done
 
-echo "Installing python package..."
-echo
-python3 -m pip install g4f >/dev/null 2>&1
+function main() {
+    echo "Installing python package..."
+    echo
+    python3 -m pip install g4f >/dev/null 2>&1
 
-echo "Move python script to home directory"
-echo
-mv ./chat_gpt.py ~/.chat_gpt.py
+    echo "Move python script to home directory"
+    echo
+    mv ./chat_gpt.py ~/.chat_gpt.py
 
-echo "Add alias to shell"
-echo
+    echo "Add alias to shell"
+    echo
 
-if [[ "${options[$selected]}" = "bash" ]]; then
-    echo "alias gpt='python3 ~/.chat_gpt.py <<<'" >> ~/.bashrc
-else
-    echo "alias gpt='python3 ~/.chat_gpt.py <<<'" >> ~/.zshrc
-fi
+    if [[ "${options[$selected]}" = "bash" ]]; then
+        echo "alias gpt='python3 ~/.chat_gpt.py <<<'" >> ~/.bashrc
+    else
+       echo "alias gpt='python3 ~/.chat_gpt.py <<<'" >> ~/.zshrc
+    fi
 
-echo "Removing repository"
-echo
-echo "Success! Rerun terminal"
+    echo "Removing repository"
+    echo
+    echo "Success! Rerun terminal"
 
-cd ../
-rm -rf gpt-in-terminal
+    cd ../
+    rm -rf gpt-in-terminal
+}
+main
+
