@@ -1,6 +1,6 @@
 # gpt-in-terminal
 ---
-# Installation
+# Installation on Linux
 ```
 git clone https://github.com/ramazanix/gpt-in-terminal.git && \
 cd gpt-in-terminal && \
