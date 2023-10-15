@@ -61,7 +61,7 @@ fi
 
 echo "Removing repository"
 echo
-echo "Success! \nRerun terminal"
+echo "Success! Rerun terminal"
 
 cd ../
 rm -rf gpt-in-terminal
