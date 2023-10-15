@@ -14,7 +14,7 @@ gpt "2+2=?"
 
 # Uninstall
 ```
-rm ~/.chat-gpt.py && \
+rm ~/.chat_gpt.py && \
 python3 -m pip uninstall g4f && \
 unalias gpt
 ```
