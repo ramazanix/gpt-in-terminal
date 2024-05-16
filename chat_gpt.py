@@ -1,6 +1,9 @@
 import g4f
 
 
+g4f.debug.logging = True
+g4f.check_version = False
+
 # streamed completion
 response = g4f.ChatCompletion.create(
     model="gpt-3.5-turbo",
