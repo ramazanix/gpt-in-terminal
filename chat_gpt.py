@@ -1,7 +1,7 @@
 import g4f
 
 
-g4f.debug.logging = True
+g4f.debug.logging = False
 g4f.check_version = False
 
 # streamed completion
